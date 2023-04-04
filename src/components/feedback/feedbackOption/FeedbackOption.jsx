@@ -11,15 +11,12 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     <Counter>
       <CounterList>
         {options.map(option => {
+        const textBtn = option[0] + option.slice(1, option.length);
+
           return (
             <CounterItem key={option}>
-              <CounterBtn
-                type="button"
-                onClick={() => {
-                  onLeaveFeedback(option);
-                }}
-              >
-                {option}
+              <CounterBtn type="button" onClick={() => onLeaveFeedback(option)}>
+                {textBtn}
               </CounterBtn>
             </CounterItem>
           );
